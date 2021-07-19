@@ -16,8 +16,18 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from main import views
+from django.conf import settings
+from django.conf.urls.static import static
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index), #아무것도 입력하지 않았을 때 main앱의 view에서 index함수 호출
-]
+    path('<str:id>', views.message, name="message"),
+    path('messageList/', views.messageList, name="messageList"),
+    path('writeM/', views.writeM, name="writeM"),
+    path('create/',views.create, name="create"),
+    path('edit/<str:id>', views.edit , name="edit"),
+    path('update/<str:id>', views.update, name="update"),
+    path('delete/<str:id>', views.delete, name="delete"),
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

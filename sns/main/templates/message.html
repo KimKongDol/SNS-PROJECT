@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<section class="about" id="about">
+    <div class="row"> 
+        
+        <div class="large-8 large-centered column">
+            <div class="title">
+                <h1></h1>
+                <span></span>
+                <div>
+                    글 제목: {{blog.title}} <br>
+                    작성자: {{blog.writer}} <br>
+                    날짜: {{blog.pub_date}}<br>
+                    글 내용: {{blog.summary}}<br>
+                    {% if blog.image %}
+                        <p><img src="{{ blog.image.url }}" alt="사진"></p>
+                    {% endif %}
+                </div>
+                <div>
+                    <a href="{% url 'edit' blog.id %}">수정하기</a>
+                    <a href="{% url 'delete' blog.id %}">삭제하기</a>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</section>
+{% endblock %}

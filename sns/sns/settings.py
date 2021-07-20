@@ -39,6 +39,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'main',
+    'users',
+
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
 ]
 
 MIDDLEWARE = [
@@ -135,3 +141,16 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staic') #static파일들을 어디에 모�
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 MEDIA_URL = '/media/'
+
+AUTHENTICATION_BACKENDS=[
+    'django.contrib.auth.backends.ModelBackend', #슈퍼유저 로그인 가능
+    'allauth.account.auth_backends.AuthenticationBackend', #이메일 로그인 가능
+]
+
+SITE_ID=1 #admin페이지 관리 번호, 단일 서버는 1을 입력하는 된다.
+
+LOGIN_REDIRECT_URL='/' #로그인되면 이동하는 페이지 이렇게 입력하는 것은 메인화면으로 이동을 의미한다.
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+ACCOUNT_EMAIL_VERIFICATION = "none"

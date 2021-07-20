@@ -3,28 +3,52 @@
 
 {% block content %}
 <section class="about" id="about">
-    <div class="row"> 
-        
-        <div class="large-8 large-centered column">
-            <div class="title">
-                <h1></h1>
-                <span></span>
-                <div>
-                    글 제목: {{blog.title}} <br>
-                    작성자: {{blog.writer}} <br>
-                    날짜: {{blog.pub_date}}<br>
-                    글 내용: {{blog.summary}}<br>
-                    {% if blog.image %}
-                        <p><img src="{{ blog.image.url }}" alt="사진"></p>
-                    {% endif %}
-                </div>
-                <div>
-                    <a href="{% url 'edit' blog.id %}">수정하기</a>
-                    <a href="{% url 'delete' blog.id %}">삭제하기</a>
-                </div>
-            </div>
+  <div class="row">
+    <div class="large-8 large-centered column">
+      {% if user.is_authenticated %}
+      <div class="title">        
+        <div>
+          글 제목: {{blog.title}} <br>
+          작성자: {{blog.writer}} <br>
+          날짜: {{blog.pub_date}}<br>
+          글 내용: {{blog.summary}}<br>
+          {% if blog.image %}
+          <p><img src="{{ blog.image.url }}" alt="사진"></p>
+          {% endif %}
         </div>
-        
+        <div>
+          <a href="{% url 'edit' blog.id %}">수정하기</a>
+          <a href="{% url 'delete' blog.id %}">삭제하기</a> 
+        </div>
+
+        <div><!-- 댓글 쓰는 부분 -->
+          <form action="{%url 'create_comment' blog.id%}" method="POST">
+            {%csrf_token%}
+            <textarea name="content" placeholder="댓글내용입력"></textarea>
+            <input type="submit" value="확인">
+          </form>
+        </div>
+
+        <div><!-- 댓글 보여주는 부분 -->
+          {% for comment in comments %}
+          <div>
+            작성자 : {{comment.writer}}<br>
+            {{comment.content}}
+            <br><hr>
+          </div>
+          {% endfor %}
+        </div>
+
+      </div>
+      {% else %}
+      <div>
+        <h3>로그인 후 이용 가능</h3>
+        <a href="{% url 'account_login' %}">로그인하기</a>
+        <a href="{% url 'account_signup' %}">가입하기</a>
+      </div>
+      {% endif %}
     </div>
+
+  </div>
 </section>
 {% endblock %}

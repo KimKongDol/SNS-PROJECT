@@ -7,19 +7,11 @@
 
     <div class="large-8 large-centered column">
       <div class="title">
-        <h1></h1>
-        <span></span>
-        <h3>글목록</h3>
+        <h3>{{user.username}}마이페이지</h3>
         <div>
           {% for blog in blogs %}
-          {{blog.title}}
-          {{blog.writer}}
-          {{blog.summary}}
-          <a href="{%url 'message' blog.id %}">...자세히</a>
+            <a href="{% url 'message' blog.id %}">{{blog.title}}</a><hr>
           {% endfor %}
-        </div>
-        <div>
-          <h2><a href="{% url 'writeM' %}">글쓰기</a></h2>
         </div>
       </div>
     </div>

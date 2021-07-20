@@ -2,69 +2,80 @@
 {% load static %}
 
 {% block content %}
-<!-- Start of About --> 
+<!-- Start of About -->
 <section class="about" id="about">
-    <div class="row"> 
-        
-        <div class="large-8 large-centered column">
-            <div class="title">
-                <h1>Hi~ It's KongDol</h1>
-                <p><a href="{% url 'messageList' %}" class="scroll">Leave Messages</a></p>
-                <span>...</span>
-                <p>We are a nimble team of designers and developers WHO simply thrive to never stop learning<br/>whilst focus on building digital experiences that people love.</p>
-            </div>
-        </div>
-        
-        <div class="large-4 hide-for-medium-only hide-for-small-only column start"> 
-            <div class="imageholder">
-                <img src="{%static 'images/greenpathway.jpg' %}" alt="Green Path Way" title="Green Path Way">
-                <div class="text"><div><span>Quality Craftsmanship</span></div></div>
-            </div>
-        </div>
-        
-        <div class="large-8 medium-9 large-uncentered medium-centered small-centered column">
-            <div class="sliderHolder">
-                 <div class="slider">
-                     <div class="slide"><img src="{%static 'images/glassesoncomputer.jpg' %}" alt="Glasses on Computer" title="Glasses on Computer" class="item"></div>
-                     <div class="slide"><img src="{%static 'images/macontable.jpg' %}" alt="Glasses on Computer" title="Glasses on Computer" class="item"></div>
-                 </div>
-                <div class="bannerNav">
-                    <a href="#" class="prev"> <i class="fa fa-angle-left"> </i></a>
-                    <a href="#" class="next"> <i class="fa fa-angle-right"> </i></a>
-                </div>
-            </div>
-        </div>
-        
-        <div class="large-6 medium-6 column"> 
-            <article>
-                <div class="smallTitle">
-                     <h2>ABOUT US</h2>
-                     <span>...</span>
-                </div>
-                <p>
-                    Soul is a Web and User Interface Design studio based in the sunny island of Malta, focusing on innovation and new technologies.  
-                    <br/><br/>
-                    We are a nimble team of designers and developers that have been creating solutions for the web for quite a while, but that doesn't really matter much to us. We simply thrive to never stop learning whilst focus on building digital experiences that people love.
-                </p>
-                <a href="#" class="cta">GET STARTED</a>
-            </article>
-        </div>
-        
-        <div class="large-6 medium-6 column"> 
-            <article>
-                <div class="smallTitle">
-                     <h2>OUR PHILOSOPHY</h2>
-                     <span>...</span>
-                </div>
-                <p>
-                    At Soul we are driven by the idea of quality craftsmanship in all that we do, each pixel refined, each line of code considered. Having a small structure but best in market knowledge, we deliver competitive internet services balancing creativity, innovation and business understanding.
-                    <br/><br/>
-                    We are obsessed with beautiful digital experiences, putting the user at the centre of everything we make. Creativity starts with understanding the context of the design challenge and only then can one deliver an exceptional graphical experience.
-                </p>
-            </article>
-        </div>
-    
+  <div class="row">
+
+    <div class="large-8 large-centered column">
+      <div class="title">
+        <h1>Hi~ It's KongDol</h1>
+        <span>...</span>
+        <p>We are a nimble team of designers and developers WHO simply thrive to never stop learning<br />whilst focus
+          on building digital experiences that people love.</p>
+      </div>
     </div>
+
+    <div class="large-4 hide-for-medium-only hide-for-small-only column start">
+      <div class="imageholder">
+        <img src="{%static 'images/greenpathway.jpg' %}" alt="Green Path Way" title="Green Path Way">
+        <div class="text">
+          <div><span>Quality Craftsmanship</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="large-8 medium-9 large-uncentered medium-centered small-centered column">
+      <div class="sliderHolder">
+        <div class="slider">
+          <div class="slide"><img src="{%static 'images/glassesoncomputer.jpg' %}" alt="Glasses on Computer"
+              title="Glasses on Computer" class="item"></div>
+          <div class="slide"><img src="{%static 'images/macontable.jpg' %}" alt="Glasses on Computer"
+              title="Glasses on Computer" class="item"></div>
+        </div>
+        <div class="bannerNav">
+          <a href="#" class="prev"> <i class="fa fa-angle-left"> </i></a>
+          <a href="#" class="next"> <i class="fa fa-angle-right"> </i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="large-6 medium-6 column">
+      <article>
+        <div class="smallTitle">
+          <h2>ABOUT US</h2>
+          <span>...</span>
+        </div>
+        <p>
+          Soul is a Web and User Interface Design studio based in the sunny island of Malta, focusing on innovation and
+          new technologies.
+          <br /><br />
+          We are a nimble team of designers and developers that have been creating solutions for the web for quite a
+          while, but that doesn't really matter much to us. We simply thrive to never stop learning whilst focus on
+          building digital experiences that people love.
+        </p>
+        <a href="#" class="cta">GET STARTED</a>
+      </article>
+    </div>
+
+    <div class="large-6 medium-6 column">
+      <article>
+        <div class="smallTitle">
+          <h2>OUR PHILOSOPHY</h2>
+          <span>...</span>
+        </div>
+        <p>
+          At Soul we are driven by the idea of quality craftsmanship in all that we do, each pixel refined, each line of
+          code considered. Having a small structure but best in market knowledge, we deliver competitive internet
+          services balancing creativity, innovation and business understanding.
+          <br /><br />
+          We are obsessed with beautiful digital experiences, putting the user at the centre of everything we make.
+          Creativity starts with understanding the context of the design challenge and only then can one deliver an
+          exceptional graphical experience.
+        </p>
+      </article>
+    </div>
+
+  </div>
 </section>
 <!-- End of About -->
 {% endblock %}

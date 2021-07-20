@@ -3,20 +3,21 @@
 
 {% block content %}
 <section class="about" id="about">
-    <div class="row"> 
-        
-        <div class="large-8 large-centered column">
-            <div class="title">
-                <form action="{% url 'update' blog.id %}" method="post">
-                    {% csrf_token %} <!-- post방식 사용할 때 값이 매번 변경되게해서 방어 -->
-                    <p>수정할 제목 : <input type="text" name="title" value="{{blog.title}}"></p>
-                    <p>수정할 작성자 : <input type="text" name="writer" value="{{blog.writer}}"></p>
-                    <p>수정할 내용: <textarea type="text" name="body" id="" cols="30" rows="10" {{blog.body}}></textarea> </p> <br>
-                    <button type="submit">제출</button>
-                </form>
-            </div>
-        </div>
-            
+  <div class="row">
+
+    <div class="large-8 large-centered column">
+      <div class="title">
+        <form action="{% url 'update' blog.id %}" method="post">
+          {% csrf_token %}
+          <!-- post방식 사용할 때 값이 매번 변경되게해서 방어 -->
+          <p>수정할 제목 : <input type="text" name="title" value="{{blog.title}}"></p>
+          <p>수정할 작성자 : <input type="text" name="writer" value="{{blog.writer}}"></p>
+          <p>수정할 내용: <textarea type="text" name="body" id="" cols="30" rows="10" {{blog.body}}></textarea> </p> <br>
+          <button type="submit">제출</button>
+        </form>
+      </div>
     </div>
+
+  </div>
 </section>
 {% endblock %}

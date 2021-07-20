@@ -14,7 +14,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path,include
 from main import views
 from django.conf import settings
 from django.conf.urls.static import static
@@ -22,7 +22,7 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.index), #아무것도 입력하지 않았을 때 main앱의 view에서 index함수 호출
+    path('', views.index, name="main"), #아무것도 입력하지 않았을 때 main앱의 view에서 index함수 호출
     path('<str:id>', views.message, name="message"),
     path('messageList/', views.messageList, name="messageList"),
     path('writeM/', views.writeM, name="writeM"),
@@ -30,4 +30,7 @@ urlpatterns = [
     path('edit/<str:id>', views.edit , name="edit"),
     path('update/<str:id>', views.update, name="update"),
     path('delete/<str:id>', views.delete, name="delete"),
+    path('accounts/',include('allauth.urls')),
+    path('users/',include('users.urls')),
+    path('<str:blog_id>/create_comment', views.create_comment, name="create_comment"),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

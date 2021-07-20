@@ -8,9 +8,12 @@ from django.utils import timezone
 def index(request): #함수이름은 index이고 request는 '요청시'를 의미하는 인자이다.
     return render(request, 'index.html') #함수 실행시 html파일을 부른다.
 
+def place(request):
+    return render(request, 'place.html')
+
 def message(request, id):
     blog = get_object_or_404(Blog, pk = id)
-    all_comments = blog.comments.all().order_by('-created_at') #-가 붙으면 댓글을 최신순으로 정렬한다.
+    all_comments = blog.comments.all().order_by('-created_at') #-가 붙으면 댓글을 최신순으로
     return render(request, 'message.html', {'blog':blog, 'comments':all_comments})
 
 def messageList(request):

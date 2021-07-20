@@ -3,25 +3,25 @@
 <div class="large-8 medium-12 column">
   <nav>
     <ul>
-      <li><a href="{% url 'main' %}">Home</a></li>
+      <li><a href="{% url 'main' %}">홈으로</a></li>
       <li>/</li>
-      <li><a href="#about">About</a></li>
+      <li><a href="{% url 'place' %}">좋아하는 장소들</a></li>
       <li>/</li>
-      <li><a href="#services">Services</a></li>
+      <li><a href="#services">좋아하는 음식들</a></li>
       <li>/</li>
-      <li><a href="#team">Team</a></li>
-      <li>/</li>
+      <!-- <li><a href="#team">Team</a></li>
+      <li>/</li> -->
       {% if user.is_authenticated %}
-      <li><a href="{% url 'account_logout' %}">Logout</a></li>
+      <li><a href="{% url 'account_logout' %}">로그아웃</a></li>
       <li>/</li>
-      <li><a href="{% url 'users:mypage' %}" >Mypage</a></li>
+      <li><a href="{% url 'users:mypage' %}" >마이페이지</a></li>
       {% else %}
-      <li><a href="{% url 'account_login' %}">Login</a></li>
+      <li><a href="{% url 'account_login' %}">로그인</a></li>
       <li>/</li>
-      <li><a href="{% url 'account_signup' %}">Signup</a></li>
+      <li><a href="{% url 'account_signup' %}">가입하기</a></li>
       {% endif %}
       <li>/</li>
-      <li><a href="{% url 'messageList' %}">Leave Messages</a></li>
+      <li><a href="{% url 'messageList' %}">메세지 남기기</a></li>
     </ul>
   </nav>
 </div>

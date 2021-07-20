@@ -9,7 +9,6 @@
       <div class="title">
         <h1></h1>
         <span></span>
-        <h3>글목록</h3>
         <div>
           {% for blog in blogs %}
           {{blog.title}}
@@ -19,7 +18,7 @@
           {% endfor %}
         </div>
         <div>
-          <h2><a href="{% url 'writeM' %}">글쓰기</a></h2>
+          <button><a href="{% url 'writeM' %}">글쓰기</a></button>
         </div>
       </div>
     </div>

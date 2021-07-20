@@ -23,6 +23,7 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index, name="main"), #아무것도 입력하지 않았을 때 main앱의 view에서 index함수 호출
+    path('place/',views.place , name="place"),
     path('<str:id>', views.message, name="message"),
     path('messageList/', views.messageList, name="messageList"),
     path('writeM/', views.writeM, name="writeM"),

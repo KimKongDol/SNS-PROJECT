@@ -12,6 +12,8 @@
           작성자: {{blog.writer}} <br>
           날짜: {{blog.pub_date}}<br>
           글 내용: {{blog.summary}}<br>
+        </div>
+        <div>
           {% if blog.image %}
           <p><img src="{{ blog.image.url }}" alt="사진"></p>
           {% endif %}
